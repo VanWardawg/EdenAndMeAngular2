@@ -1,0 +1,36 @@
+﻿<div id="emp-header-wrapper" [class.emp-header-lrg] = "mediaService.isDesktop() || mediaService.isLaptop()"
+    [class.emp-header-md] = "mediaService.isTablet()" [class.emp-header-sm] = "mediaService.isPhone()">
+    <img src="{{logoImage?.src}}" class="img" (click)="goToGallery()"/>
+    <div (click)="toggleMenu()" class="hamburger-button" *ngIf="mediaService.isPhone() || mediaService.isTablet()">
+        <i class="fa fa-bars" [class.fa-lg]="mediaService.isPhone()" [class.fa-2x] = "!mediaService.isPhone()" aria-hidden="true"></i>
+    </div>
+    <div *ngIf="mediaService.isDesktop() || mediaService.isLaptop()">
+        <div class="squasher">
+        </div>
+        <ul>
+            <li *ngFor="let link of links" [class.lrg] = "mediaService.isDesktop()" [class.md] = "mediaService.isLaptop()">
+                <a [routerLink]="link.route" routerLinkActive="{{link.style}}">{{link.name}}</a>
+            </li>
+            <li [class.lrg] = "mediaService.isDesktop()" [class.md] = "mediaService.isLaptop()">
+                <a href="http://edenandmephotography.blogspot.com/" target="_blank">blog</a>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="showFlyoutMenu" class = "flyout">
+        <div class="sidebar" (click)="toggleMenu()" [@flyInOut]="state">
+            <div class="header">
+                <img src="{{logoImage?.src}}" class="img-fly"/>
+            </div>
+            <ul>
+                <li *ngFor="let link of links" >
+                    <a [routerLink]="link.route" routerLinkActive="{{link.style}}">{{link.name}}</a>
+                </li>
+                <li>
+                    <a href="http://edenandmephotography.blogspot.com/" target="_blank">blog</a>
+                </li>
+            </ul>
+        </div>
+        <div class="clickoff" (click)="toggleMenu()" [@fadeInOut]="fadeState" >
+        </div>
+    </div>
+</div>

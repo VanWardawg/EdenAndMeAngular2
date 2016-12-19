@@ -1,0 +1,162 @@
+﻿@main-color: #C8E6C9;
+@main-color-dark: rgb(165,214,167);
+@pink: #F8BBD0;
+@blue: #BBDEFB; //blue 100
+@yellow: #FFF59D; //yellow 200
+
+.emp-header-lrg {
+    height:200px;
+
+    .img {
+        position:absolute;
+        width:300px;
+        height:300px;
+        float:left;
+        top: -45px;
+    }
+
+    .squasher {
+        width:100%;
+        height:150px;
+    }
+
+    ul {
+        width:70%;
+        float: right;
+        vertical-align: bottom;
+              
+        .lrg {
+            margin-right:10%;
+        }
+
+        .md {
+            margin-right: 5%;
+        }
+
+        li {
+            display:inline;
+        }
+    }
+}
+.emp-header-md {
+    height:175px;
+
+    .img {
+        position:absolute;
+        width:250px;
+        height:250px;
+        float:left;
+        top: -35px;
+    }
+}
+
+.emp-header-sm {
+    height:150px;
+    margin: 0px !important;
+    .img {
+        position:absolute;
+        width:200px;
+        height:200px;
+        float:left;
+        top: -25px;
+    }
+}
+#emp-header-wrapper {
+    margin: 0px 20px;
+    border-bottom: 5px solid @main-color;
+    .hamburger-button {
+        float:right;
+        margin-top:50px;
+        width:10px;
+        height:10px;
+        margin-right:25px;
+    }
+
+    .img {
+        cursor: pointer;
+    }
+
+    ul {  
+        li {
+            list-style-type: none;
+
+            a {
+                padding: 0px 10px;
+                text-decoration: none;
+                color:black;
+            }
+
+            a:hover {
+                color:black;
+            }
+        }
+    }
+
+    .flyout {
+        .sidebar {
+            position: absolute;
+            left:0;
+            top: 0;
+            z-index:1;
+            float: left;
+            width: 300px;
+            height: 100%;
+            min-width:300px;
+            min-height:360px;
+            background-color: white;
+            box-shadow: 2px 0px 30px gray;
+
+            .header {
+                background-color: @main-color-dark;
+                width:100%;
+                height:125px;
+                box-shadow: 0px 2px 5px rgba(0,0,0,.26);
+                border-radius: 0px 0px 2px 2px;
+
+                .img-fly {
+                    margin: 0 auto;
+                    display:block;
+                    width:150px;
+                    height:150px;
+                }
+            }
+
+            ul {
+                margin: 15px 0px;
+                display:block;
+                li {
+                    font-size: 22px;
+                    font-weight: 600;
+                    margin-bottom:20px;
+                }
+            }
+        }
+
+        .clickoff {
+            position: absolute;
+            right:0;
+            top: 0;
+            float: right;
+            background-color:gray;
+            opacity: .3;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .gallery-underline {
+        border-bottom: 2px solid @pink;
+    }
+
+    .services-underline {
+        border-bottom: 2px solid @blue;
+    }
+
+    .about-me-underline {
+        border-bottom: 2px solid @yellow;
+    }
+
+    .contact-underline {
+        border-bottom: 2px solid @yellow;
+    }
+}

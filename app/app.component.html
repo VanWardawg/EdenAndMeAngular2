@@ -1,0 +1,7 @@
+﻿<div>
+    <emp-header></emp-header>
+    <div [class.content-wrapper] = "!mediaService.isPhone()">
+        <router-outlet></router-outlet>
+        <emp-footer></emp-footer>
+    </div>
+</div>
